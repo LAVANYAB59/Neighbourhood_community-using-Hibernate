@@ -8,22 +8,22 @@ import com.kce.util.HibernateUtil;
 
 public class GardenerDAO {
 
-    // Find Gardener by ID
+   
     public Gardener findGardener(String id) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.get(Gardener.class, id); // simple get by primary key
+            return session.get(Gardener.class, id);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    // Insert Gardener
+  
     public boolean insertGardener(Gardener g) {
         Transaction tx = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-            session.persist(g); // persist entity
+            session.persist(g); 
             tx.commit();
             return true;
         } catch (Exception e) {
@@ -33,7 +33,7 @@ public class GardenerDAO {
         }
     }
 
-    // Delete Gardener
+   
     public boolean deleteGardener(String id) {
         Transaction tx = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -41,7 +41,7 @@ public class GardenerDAO {
             if (g == null) return false;
 
             tx = session.beginTransaction();
-            session.remove(g); // delete entity
+            session.remove(g); 
             tx.commit();
             return true;
         } catch (Exception e) {
