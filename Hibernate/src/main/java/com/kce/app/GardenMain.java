@@ -25,13 +25,12 @@ public class GardenMain {
             System.out.print("Enter choice: ");
 
             int choice = sc.nextInt();
-            sc.nextLine();  // consume newline
+            sc.nextLine(); 
 
             switch (choice) {
 
-                // ✅ REGISTER
                 case 1:
-                    Gardener g = new Gardener();   // CREATE OBJECT FIRST
+                    Gardener g = new Gardener();  
 
                     System.out.print("Gardener ID: ");
                     g.setGardenerID(sc.nextLine());
@@ -59,10 +58,10 @@ public class GardenMain {
                     service.registerGardener(g);
                     break;
 
-                // ✅ VIEW BY ID
+              
                 case 2:
                     System.out.print("Enter ID: ");
-                    String id = sc.nextLine();   // String ID
+                    String id = sc.nextLine();   
 
                     Gardener found = service.getGardener(id);
 
@@ -72,13 +71,13 @@ public class GardenMain {
                         System.out.println("Gardener Not Found");
                     break;
 
-                // ✅ VIEW ALL
+             
                 case 3:
                     List<Gardener> list = service.getAllGardeners();
                     list.forEach(System.out::println);
                     break;
 
-                // ✅ UPDATE
+            
                 case 4:
                     System.out.print("Enter ID to Update: ");
                     String uid = sc.nextLine();
@@ -94,7 +93,6 @@ public class GardenMain {
                     }
                     break;
 
-                // ✅ DELETE
                 case 5:
                     System.out.print("Enter ID to Delete: ");
                     String did = sc.nextLine();
