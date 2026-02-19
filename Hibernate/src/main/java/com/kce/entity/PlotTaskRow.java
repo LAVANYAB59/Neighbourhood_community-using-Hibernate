@@ -44,39 +44,81 @@ public class PlotTaskRow {
     @Column(name = "TASK_STATUS")
     private String taskStatus;
 
-    // ------------------ Getters and Setters ------------------
+ 
     public Long getRowId() { return rowId; }
-    public void setRowId(Long rowId) { this.rowId = rowId; }
+    public void setRowId(Long rowId) {
+        this.rowId = rowId; 
+    }
 
-    public Gardener getGardener() { return gardener; }
-    public void setGardener(Gardener gardener) { this.gardener = gardener; }
+    public Gardener getGardener() { 
+        return gardener; 
+    }
+    public void setGardener(Gardener gardener) { 
+        this.gardener = gardener;
+    }
 
-    public String getServiceType() { return serviceType; }
-    public void setServiceType(String serviceType) { this.serviceType = serviceType; }
+    public String getServiceType() {
+        return serviceType;
+    }
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
 
-    public String getPlotNo() { return plotNo; }
-    public void setPlotNo(String plotNo) { this.plotNo = plotNo; }
+    public String getPlotNo() {
+        return plotNo;
+    }
+    public void setPlotNo(String plotNo) {
+        this.plotNo = plotNo;
+    }
 
-    public String getSeasonName() { return seasonName; }
-    public void setSeasonName(String seasonName) { this.seasonName = seasonName; }
+    public String getSeasonName() {
+        return seasonName;
+    }
+    public void setSeasonName(String seasonName) {
+        this.seasonName = seasonName;
+    }
 
-    public Date getAllocationStartDate() { return allocationStartDate; }
-    public void setAllocationStartDate(Date allocationStartDate) { this.allocationStartDate = allocationStartDate; }
+    public Date getAllocationStartDate() {
+        return allocationStartDate; 
+    }
+    public void setAllocationStartDate(Date allocationStartDate) { 
+        this.allocationStartDate = allocationStartDate;
+    }
 
-    public Date getAllocationEndDate() { return allocationEndDate; }
-    public void setAllocationEndDate(Date allocationEndDate) { this.allocationEndDate = allocationEndDate; }
+    public Date getAllocationEndDate() {
+        return allocationEndDate;
+    }
+    public void setAllocationEndDate(Date allocationEndDate) { 
+        this.allocationEndDate = allocationEndDate; 
+    }
 
-    public Date getTaskDate() { return taskDate; }
-    public void setTaskDate(Date taskDate) { this.taskDate = taskDate; }
+    public Date getTaskDate() {
+        return taskDate;
+    }
+    public void setTaskDate(Date taskDate) {
+        this.taskDate = taskDate;
+    }
 
-    public String getTaskType() { return taskType; }
-    public void setTaskType(String taskType) { this.taskType = taskType; }
+    public String getTaskType() {
+        return taskType;
+    }
+    public void setTaskType(String taskType) {
+        this.taskType = taskType; 
+    }
 
-    public String getTaskNotes() { return taskNotes; }
-    public void setTaskNotes(String taskNotes) { this.taskNotes = taskNotes; }
+    public String getTaskNotes() { 
+        return taskNotes;
+    }
+    public void setTaskNotes(String taskNotes) {
+        this.taskNotes = taskNotes; 
+    }
 
-    public String getTaskStatus() { return taskStatus; }
-    public void setTaskStatus(String taskStatus) { this.taskStatus = taskStatus; }
+    public String getTaskStatus() { 
+        return taskStatus;
+    }
+    public void setTaskStatus(String taskStatus) { 
+        this.taskStatus = taskStatus; 
+    }
 
     @Override
     public String toString() {
