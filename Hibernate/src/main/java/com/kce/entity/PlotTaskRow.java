@@ -122,7 +122,7 @@ public class PlotTaskRow {
 
     @Override
     public String toString() {
-        return "\n----------------------------------\n" +
+        return "\n-------------------------------\n" +
                "PlotTaskRow ID: " + rowId + "\n" +
                "Gardener ID: " + (gardener != null ? gardener.getGardenerID() : "N/A") + "\n" +
                "Services: " + serviceType + "\n" +
