@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Oracle dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.community.dialect.OracleLegacyDialect
+        </property>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">
+            oracle.jdbc.driver.OracleDriver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:oracle:thin:@localhost:1521:xe
+        </property>
+
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.connection.password">system</property>
+
+        <!-- Show SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Auto table update -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Entity mappings -->
+        <mapping class="com.kce.entity.Gardener"/>
+        <mapping class="com.kce.entity.PlotTaskRow"/>
+
+    </session-factory>
+</hibernate-configuration>
