@@ -12,14 +12,11 @@ import com.kce.util.HibernateUtil;
 
 public class PlotTaskDAO {
 
-    // -------------------------------
-    // Insert PlotTaskRow (Allocation or Maintenance)
-    // -------------------------------
     public boolean insertPlotTaskRow(PlotTaskRow row) {
         Transaction tx = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-            session.persist(row); // ROW_ID auto-generated via sequence
+            session.persist(row); 
             tx.commit();
             return true;
         } catch (Exception e) {
@@ -29,9 +26,6 @@ public class PlotTaskDAO {
         }
     }
 
-    // -------------------------------
-    // Find all plot allocations for a gardener
-    // -------------------------------
     public List<PlotTaskRow> findAllocationsByGardener(String gardenerID) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery(
@@ -42,9 +36,6 @@ public class PlotTaskDAO {
         }
     }
 
-    // -------------------------------
-    // Find maintenance tasks for a plot and season
-    // -------------------------------
     public List<PlotTaskRow> findTasksByPlot(String plotNo, String seasonName) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery(
@@ -56,9 +47,7 @@ public class PlotTaskDAO {
         }
     }
 
-    // -------------------------------
-    // Find overlapping plot allocation
-    // -------------------------------
+    
     public PlotTaskRow findOverlappingAllocation(String plotNo, java.sql.Date startDate, java.sql.Date endDate) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query<PlotTaskRow> query = session.createQuery(
@@ -80,9 +69,7 @@ public class PlotTaskDAO {
             return query.uniqueResult();
         }
     }
-    // -------------------------------
-    // Find active allocations for a gardener
-    // -------------------------------
+   
     public List<PlotTaskRow> findActiveAllocationsForGardener(String gardenerID, Date referenceDate) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery(
@@ -95,9 +82,7 @@ public class PlotTaskDAO {
         }
     }
 
-    // -------------------------------
-    // Find pending maintenance tasks for a gardener
-    // -------------------------------
+ 
     public List<PlotTaskRow> findPendingTasksForGardener(String gardenerID) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery(
@@ -109,18 +94,13 @@ public class PlotTaskDAO {
         }
     }
 
-    // -------------------------------
-    // Find a row by RowID
-    // -------------------------------
+   
     public PlotTaskRow findRowByID(Long rowID) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.get(PlotTaskRow.class, rowID);
         }
     }
 
-    // -------------------------------
-    // Update Task Status and Notes
-    // -------------------------------
     public boolean updateTaskStatusAndNotes(Long rowID, String taskStatus, String taskNotes) {
         Transaction tx = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
