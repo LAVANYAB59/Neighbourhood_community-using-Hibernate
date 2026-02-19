@@ -64,9 +64,7 @@ public class GardenService {
         session.close();
     }
 
-        public void allocatePlot(Gardener gardener,
-                                 String plotNo, String season,
-                                 String start, String end) {
+        public void allocatePlot(Gardener gardener, String plotNo, String season,String start, String end) {
 
             Session session = HibernateUtil.getSessionFactory().openSession();
             Transaction tx = session.beginTransaction();
